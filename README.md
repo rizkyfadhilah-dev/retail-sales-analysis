@@ -157,7 +157,7 @@ SQL was also used to analyze customer purchasing behavior based on:
 - Total profit
 - Transaction frequency
 
-For example, the transaction-frequency analysis identified customers with multiple purchases, allowing customer activity to be compared based on the number of transactions.
+The analysis helps identify customers with high purchase values, high profit contributions, and frequent transactions.
 
 ### SQL Business Insights
 
