@@ -128,13 +128,34 @@ Using `GROUP BY` and aggregation functions, the products with the highest total 
 
 The **Monitor** product generated the highest total profit among the analyzed products.
 
-#### 3. Product Profit Ranking
+#### 3. Above-Average Profit
+
+A subquery with `AVG()` was used to identify transactions with profit above the overall average profit.
+
+The results were ordered from the highest profit to the lowest profit.
+
+| Product | Profit |
+|---|---:|
+| Monitor | Rp2,105,100 |
+| Monitor | Rp1,439,200 |
+| Monitor | Rp1,323,600 |
+| Monitor | Rp1,099,800 |
+| Monitor | Rp1,052,300 |
+| Monitor | Rp1,030,100 |
+| Monitor | Rp795,900 |
+| Bookshelf | Rp705,200 |
+| Drawer | Rp651,000 |
+| Monitor | Rp630,000 |
+
+The analysis helps identify individual transactions that generated profit above the overall average and highlights products associated with high-profit transactions.
+
+#### 4. Product Profit Ranking
 
 The `RANK()` window function was used to rank products based on their total profit.
 
 This analysis makes it possible to identify high-performing products and compare their contribution to overall profitability.
 
-#### 4. Monthly Sales Growth
+#### 5. Monthly Sales Growth
 
 The `LAG()` window function was used to compare monthly sales with the previous month.
 
@@ -149,24 +170,63 @@ The `LAG()` window function was used to compare monthly sales with the previous 
 
 March 2026 recorded the highest monthly sales and the largest month-over-month increase.
 
-#### 5. Customer Analysis
+#### 6. Customer Analysis
 
-SQL was also used to analyze customer purchasing behavior based on:
+SQL was used to analyze customer purchasing behavior based on total sales, total profit, and transaction frequency.
 
-- Total sales
-- Total profit
-- Transaction frequency
+##### 6.1 Top Customers by Total Sales
 
-The analysis helps identify customers with high purchase values, high profit contributions, and frequent transactions.
+Customers were ranked based on their total sales value.
+
+| Customer ID | Customer | Transactions | Total Sales | Total Profit |
+|---|---|---:|---:|---:|
+| C112 | Vina | 1 | Rp8,800,000 | Rp2,105,100 |
+| C197 | Nanda | 1 | Rp8,800,000 | Rp1,439,200 |
+| C089 | Dewi | 1 | Rp6,600,000 | Rp1,323,600 |
+| C117 | Maya | 2 | Rp6,290,000 | Rp1,128,900 |
+| C189 | Lina | 2 | Rp4,485,500 | Rp813,000 |
+
+The results show that Vina and Nanda recorded the highest total sales among the analyzed customers.
+
+##### 6.2 Top Customers by Total Profit
+
+Customer profitability was also analyzed by aggregating profit across transactions.
+
+| Customer ID | Customer | Transactions | Total Sales | Total Profit |
+|---|---|---:|---:|---:|
+| C112 | Vina | 1 | Rp8,800,000 | Rp2,105,100 |
+| C197 | Nanda | 1 | Rp8,800,000 | Rp1,439,200 |
+| C089 | Dewi | 1 | Rp6,600,000 | Rp1,323,600 |
+| C117 | Maya | 2 | Rp6,290,000 | Rp1,128,900 |
+| C058 | Andi | 1 | Rp4,400,000 | Rp1,099,800 |
+
+Vina generated the highest total profit among the customers shown in the analysis.
+
+##### 6.3 Customers by Transaction Frequency
+
+Transaction frequency was analyzed using `COUNT()` to identify customers with multiple purchases.
+
+| Customer ID | Customer | Transactions | Total Sales | Total Profit |
+|---|---|---:|---:|---:|
+| C010 | Intan | 3 | Rp3,950,800 | Rp671,500 |
+| C032 | Fajar | 3 | Rp2,315,400 | Rp369,000 |
+| C097 | Tono | 3 | Rp1,671,000 | Rp353,300 |
+| C108 | Gita | 3 | Rp1,369,000 | Rp247,100 |
+| C039 | Joko | 3 | Rp557,500 | Rp95,000 |
+
+The results show that several customers made three transactions during the analyzed period. Customer IDs are included because some customer names appear more than once in the dataset.
 
 ### SQL Business Insights
 
-The SQL analysis demonstrates how queries can be used to answer practical business questions, such as:
+The SQL analysis demonstrates how SQL queries can be used to answer practical business questions:
 
 - Which transactions generate high, medium, or low profit?
+- Which transactions generate profit above the overall average?
 - Which products contribute the most profit?
+- How are products ranked based on total profit?
 - Which months experience significant changes in sales?
-- Which customers generate the highest sales and profit?
+- Which customers generate the highest sales?
+- Which customers generate the highest profit?
 - Which customers have the highest transaction frequency?
 
 The complete SQL queries are available in the [`sql`](./sql) folder.
