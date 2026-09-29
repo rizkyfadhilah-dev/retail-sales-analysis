@@ -56,13 +56,47 @@ The main preparation steps included:
 
 ## Tools & Technologies
 
+- **SQL / MySQL**
 - **Python**
 - **Pandas**
 - **Matplotlib**
-- **MySQL**
 - **phpMyAdmin**
 - **Google Colab**
 - **GitHub**
+
+## SQL Analysis
+
+SQL was used to perform data analysis and extract business insights from the cleaned retail sales dataset.
+
+The analysis includes:
+
+- Profit classification using `CASE WHEN`
+- Profit summary using `GROUP BY`, `COUNT()`, and `SUM()`
+- Above-average profit analysis using subqueries
+- Product profit analysis using CTE
+- Product ranking using `RANK()`
+- Monthly sales comparison using `LAG()`
+- Monthly sales growth percentage
+- Top customers by total sales
+- Top customers by total profit
+- Top customers by transaction frequency
+
+### SQL Skills Demonstrated
+
+- `SELECT`
+- `WHERE`
+- `CASE WHEN`
+- `GROUP BY`
+- Aggregate functions
+- Subqueries
+- CTE (`WITH`)
+- Window Functions
+- `RANK()`
+- `LAG()`
+- `ORDER BY`
+- `LIMIT`
+
+SQL queries used in this project are available in the [`sql`](./sql) folder.
 
 ## Exploratory Data Analysis
 
@@ -168,6 +202,16 @@ Based on the exploratory analysis:
 6. **Kulon Progo** had the highest profit margin despite having the lowest total sales.
 7. Sales volume and profit margin provide different perspectives when evaluating business performance.
 
+## Conclusion
+
+This project demonstrates an end-to-end retail sales analysis workflow using SQL and Python.
+
+The analysis covers data cleaning, SQL querying, exploratory data analysis, customer analysis, product analysis, monthly sales trends, and data visualization.
+
+The project demonstrates the following workflow:
+
+**Data Cleaning → SQL Analysis → Python EDA → Visualization → Business Insights**
+
 ## Project Structure
 
 ```text
@@ -178,6 +222,18 @@ retail-sales-analysis/
 │
 ├── notebooks/
 │   └── data_sales.ipynb
+│
+├── sql/
+│   ├── 01_case_when_profit.sql
+│   ├── 02_profit_summary.sql
+│   ├── 03_above_average_profit.sql
+│   ├── 04_product_profit_cte.sql
+│   ├── 05_product_profit_ranking.sql
+│   ├── 06_monthly_sales_lag.sql
+│   ├── 07_monthly_sales_growth.sql
+│   ├── 08_top_customers_sales.sql
+│   ├── 09_top_customers_profit.sql
+│   └── 10_top_customers_transactions.sql
 │
 ├── visualizations/
 │   ├── sales_distribution.png
