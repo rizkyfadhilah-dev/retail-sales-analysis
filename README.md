@@ -98,6 +98,79 @@ The analysis includes:
 
 SQL queries used in this project are available in the [`sql`](./sql) folder.
 
+### SQL Analysis Results
+
+The SQL analysis was used to extract business insights from the cleaned retail sales dataset.
+
+#### 1. Profit Classification
+
+Transactions were classified into three profit levels using `CASE WHEN`:
+
+| Profit Level | Transactions | Total Profit |
+|---|---:|---:|
+| High Profit | 167 | Rp48,864,400 |
+| Medium Profit | 126 | Rp8,956,600 |
+| Low Profit | 707 | Rp11,304,500 |
+
+The majority of transactions were classified as **Low Profit**, while High Profit transactions generated the largest total profit.
+
+#### 2. Top Products by Total Profit
+
+Using `GROUP BY` and aggregation functions, the products with the highest total profit were identified:
+
+| Rank | Product | Total Profit |
+|---:|---|---:|
+| 1 | Monitor | Rp13,502,800 |
+| 2 | Drawer | Rp8,412,300 |
+| 3 | Office Chair | Rp6,685,600 |
+| 4 | Webcam | Rp5,752,100 |
+| 5 | Bookshelf | Rp4,576,800 |
+
+The **Monitor** product generated the highest total profit among the analyzed products.
+
+#### 3. Product Profit Ranking
+
+The `RANK()` window function was used to rank products based on their total profit.
+
+This analysis makes it possible to identify high-performing products and compare their contribution to overall profitability.
+
+#### 4. Monthly Sales Growth
+
+The `LAG()` window function was used to compare monthly sales with the previous month.
+
+| Month | Total Sales | Sales Change | Growth |
+|---|---:|---:|---:|
+| January 2026 | Rp50,576,500 | - | - |
+| February 2026 | Rp44,309,400 | -Rp6,267,100 | -12.39% |
+| March 2026 | Rp68,045,900 | +Rp23,736,500 | +53.57% |
+| April 2026 | Rp57,772,400 | -Rp10,273,500 | -15.10% |
+| May 2026 | Rp50,569,300 | -Rp7,203,100 | -12.47% |
+| June 2026 | Rp60,054,200 | +Rp9,484,900 | +18.76% |
+
+March 2026 recorded the highest monthly sales and the largest month-over-month increase.
+
+#### 5. Customer Analysis
+
+SQL was also used to analyze customer purchasing behavior based on:
+
+- Total sales
+- Total profit
+- Transaction frequency
+
+For example, the transaction-frequency analysis identified customers with multiple purchases, allowing customer activity to be compared based on the number of transactions.
+
+### SQL Business Insights
+
+The SQL analysis demonstrates how queries can be used to answer practical business questions, such as:
+
+- Which transactions generate high, medium, or low profit?
+- Which products contribute the most profit?
+- Which months experience significant changes in sales?
+- Which customers generate the highest sales and profit?
+- Which customers have the highest transaction frequency?
+
+The complete SQL queries are available in the [`sql`](./sql) folder.
+
 ## Exploratory Data Analysis
 
 ### Overall Sales Performance
